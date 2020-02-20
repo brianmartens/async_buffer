@@ -158,7 +158,7 @@ func putTestData(buffer *AsyncBuffer) {
 func readTestData(buffer *AsyncBuffer) {
 	for {
 		v := buffer.Get()
-		if v == nil {
+		if v == nil && buffer.IsClosed() {
 			break
 		}
 	}
